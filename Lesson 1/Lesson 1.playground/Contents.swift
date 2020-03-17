@@ -36,3 +36,16 @@ print("Катет 1 = \(cat1), катет 2 = \(cat2)")
 print("Площадь = \((cat1 * cat2) / 2)")
 print("Периметр = \(cat1 + cat2 + gip)")
 print("Гипотинуза = \(gip)")
+
+//task 3
+print("3. Подсчет накоплений:")
+
+let percent = 1.06;
+let years = 5;
+var amount: Double = 50_000
+
+for _ in 1...years {
+    amount *= percent;
+}
+
+print("Через \(years) лет сумма составит \(amount)")
