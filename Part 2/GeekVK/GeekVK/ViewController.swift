@@ -60,4 +60,8 @@ class ViewController: UIViewController {
     @IBAction func closeKeyboard(_ sender: UITapGestureRecognizer) {
         self.view.endEditing(true)
     }
+    
+    @IBAction func unwindToLogin(unwindSegue: UIStoryboardSegue) {
+        print("\(loginInput.text) logout")
+    }
 }

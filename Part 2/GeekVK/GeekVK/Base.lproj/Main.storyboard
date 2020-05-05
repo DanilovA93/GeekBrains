@@ -130,9 +130,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="jcF-6r-LSD" kind="show" id="Ecj-mG-ozZ"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -140,9 +137,23 @@
                             <outlet property="delegate" destination="wxm-2a-gKe" id="8i8-n4-RsI"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="dHd-CL-ZB1"/>
+                    <navigationItem key="navigationItem" id="dHd-CL-ZB1">
+                        <barButtonItem key="leftBarButtonItem" systemItem="search" id="k9v-0y-fXo">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <segue destination="jcF-6r-LSD" kind="show" id="RZ5-Bz-f5G"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="8LA-vM-WZz">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <segue destination="bmg-8h-YSO" kind="unwind" unwindAction="unwindToLoginWithUnwindSegue:" id="2F1-lH-s8u"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="96o-1J-Ahn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="bmg-8h-YSO" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2890" y="451"/>
         </scene>
@@ -201,9 +212,17 @@
                             <outlet property="delegate" destination="gzG-c7-se6" id="J1c-KQ-sIE"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="AVm-IG-lgN"/>
+                    <navigationItem key="navigationItem" id="AVm-IG-lgN">
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="Tf7-YE-rht">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <segue destination="JhS-Yn-3Qr" kind="unwind" unwindAction="unwindToLoginWithUnwindSegue:" id="GqN-Yn-WV2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jUE-6p-K8P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="JhS-Yn-3Qr" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2890" y="-228"/>
         </scene>
@@ -271,6 +290,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JiF-D6-aIU">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -290,6 +310,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Hdd-tV-1Gh">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
