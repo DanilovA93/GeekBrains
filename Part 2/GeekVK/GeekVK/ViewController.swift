@@ -9,9 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
-    let userDB: [String:String] = ["user1": "123", "user2": "qwe"]
-    
+            
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var loginInput: UITextField!
     @IBOutlet weak var passwordInput: UITextField!
@@ -26,13 +24,10 @@ class ViewController: UIViewController {
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        let userPassword = userDB[loginInput.text!]
-        let isValid = userPassword != nil && passwordInput.text == userPassword
-        
-        if !isValid {
+        if findUserByMailAndPassword() == nil {
             showLoginError()
         }
-        return isValid
+        return true
     }
     
     private func showLoginError() {
@@ -62,6 +57,28 @@ class ViewController: UIViewController {
     }
     
     @IBAction func unwindToLogin(unwindSegue: UIStoryboardSegue) {
-        print("\(loginInput.text) logout")
+    }
+    
+    private func findUserByMailAndPassword() -> User? {
+        var currentUser: User?
+        
+        for user in usersDB() {
+            if user.email == loginInput.text && user.password == passwordInput.text {
+                currentUser = user
+            }
+        }
+        
+        return currentUser
+    }
+    
+    private func usersDB() -> Array<User> {
+        var arr: Array<User> = Array()
+        let user1: User = User(id: 1, email: "user1", password: "123", name: "Tom", avatar: UIImage(named: "user1")!)
+        let user2: User = User(id: 2, email: "user2", password: "321", name: "Jerry", avatar: UIImage(named: "user2")!)
+        
+        arr.append(user1)
+        arr.append(user2)
+        
+        return arr
     }
 }
