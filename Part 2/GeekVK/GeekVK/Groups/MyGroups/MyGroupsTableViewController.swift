@@ -10,11 +10,22 @@ import UIKit
 
 class MyGroupsTableViewController: UITableViewController {
     
-    let myGroups: [Group] = [
+    var myGroups: [Group] = [
         Group(id: 1, name: "one", avatar: UIImage(named: "group1")!),
         Group(id: 2, name: "two", avatar: UIImage(named: "group2")!)
     ]
-
+    
+    @IBAction func addNewGroup(_ sender: Any) {
+        myGroups.append(Group(id: myGroups.count - 1, name: "new group", avatar: UIImage(named: "group6")!))
+        tableView.reloadSections(IndexSet(integer: 0), with: .fade)
+    }
+    @IBAction func deleteGroup(_ sender: Any) {
+        if myGroups.count > 0 {
+            myGroups.remove(at: 0)
+            tableView.reloadSections(IndexSet(integer: 0), with: .fade)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

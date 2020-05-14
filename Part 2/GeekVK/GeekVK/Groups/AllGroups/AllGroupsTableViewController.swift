@@ -38,8 +38,6 @@ class AllGroupsTableViewController: UITableViewController {
         cell.nameLabel.text = allGroups[indexPath.row].name
         // Configure the cell...
         
-        print("!!")
-
         return cell
     }
 }
