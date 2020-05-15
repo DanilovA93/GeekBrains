@@ -9,11 +9,12 @@
 import UIKit
 
 class FriendsTableViewController: UITableViewController {
-    
+            
     let friends: [User] = [
         User(id: 1, email: "user1", password: "123", name: "Tom", avatar: UIImage(named: "user1")!),
         User(id: 2, email: "user2", password: "321", name: "Jerry", avatar: UIImage(named: "user2")!)
     ]
+    var selectedFriend: User?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,5 +34,14 @@ class FriendsTableViewController: UITableViewController {
         cell.nameLabel.text = friends[indexPath.row].name
 
         return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let cell = sender as? UITableViewCell {
+            let i = tableView.indexPath(for: cell)!.row
+            let targetVC = segue.destination as! FriendsPhotoCollectionViewController
+            
+            targetVC.selectedFriend = friends[i]
+        }
     }
 }

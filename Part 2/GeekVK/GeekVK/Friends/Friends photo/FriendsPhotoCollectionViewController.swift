@@ -12,8 +12,8 @@ private let reuseIdentifier = "Cell"
 
 class FriendsPhotoCollectionViewController: UICollectionViewController {
     
-    let friend: User = User(id: 2, email: "user2", password: "321", name: "Jerry", avatar: UIImage(named: "user2")!)
-
+    var selectedFriend: User?
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,20 +25,17 @@ class FriendsPhotoCollectionViewController: UICollectionViewController {
 
     // MARK: UICollectionViewDataSource
 
-
-
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
         return 1
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "friendsPhotoCell", for: indexPath) as! FriendsPhotoCollectionViewCell
-        
-        cell.avatarImageView.image = friend.avatar
+                
+        cell.avatarImageView.image = self.selectedFriend!.avatar
         // Configure the cell
-    
         return cell
     }
 
