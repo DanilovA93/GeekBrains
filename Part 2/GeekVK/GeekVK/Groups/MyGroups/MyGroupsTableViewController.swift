@@ -15,10 +15,15 @@ class MyGroupsTableViewController: UITableViewController {
         Group(id: 2, name: "two", avatar: UIImage(named: "group2")!)
     ]
     
-    @IBAction func addNewGroup(_ sender: Any) {
-        myGroups.append(Group(id: myGroups.count - 1, name: "new group", avatar: UIImage(named: "group6")!))
-        tableView.reloadSections(IndexSet(integer: 0), with: .fade)
+    @IBAction func unfollowGroup(_ sender: UIButton) {
+        if let cell = sender.superview?.superview as? UITableViewCell {
+            let i = tableView.indexPath(for: cell)!.row
+            myGroups.remove(at: i)
+            
+            tableView.reloadSections(IndexSet(integer: 0), with: .fade)
+        }
     }
+
     @IBAction func deleteGroup(_ sender: Any) {
         if myGroups.count > 0 {
             myGroups.remove(at: 0)

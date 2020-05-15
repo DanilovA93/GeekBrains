@@ -143,12 +143,23 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0rK-GP-PgX">
+                                            <rect key="frame" x="326" y="20" width="60" height="30"/>
+                                            <state key="normal" title="Unfollow">
+                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="unfollowGroup:" destination="wxm-2a-gKe" eventType="touchUpInside" id="irC-8j-x4z"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="fCG-TC-G2Q" firstAttribute="leading" secondItem="2CD-oX-opd" secondAttribute="leading" constant="8" id="7PY-8e-Esb"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="9s4-sL-G5z" secondAttribute="trailing" constant="8" id="7xM-S0-gsl"/>
                                         <constraint firstItem="9s4-sL-G5z" firstAttribute="top" secondItem="fCG-TC-G2Q" secondAttribute="top" id="Q5W-BH-yen"/>
+                                        <constraint firstItem="0rK-GP-PgX" firstAttribute="top" secondItem="fCG-TC-G2Q" secondAttribute="top" id="aUB-LT-32B"/>
                                         <constraint firstItem="fCG-TC-G2Q" firstAttribute="centerY" secondItem="2CD-oX-opd" secondAttribute="centerY" id="mqp-wb-sAf"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="0rK-GP-PgX" secondAttribute="trailing" constant="8" id="s3y-ZL-Stf"/>
                                         <constraint firstItem="9s4-sL-G5z" firstAttribute="leading" secondItem="fCG-TC-G2Q" secondAttribute="trailing" constant="8" id="z4O-l3-rIm"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -169,11 +180,6 @@
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <segue destination="jcF-6r-LSD" kind="show" id="RZ5-Bz-f5G"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem systemItem="add" id="0iA-pp-Iis">
-                                <connections>
-                                    <action selector="addNewGroup:" destination="wxm-2a-gKe" id="8Rq-CP-VFk"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem systemItem="trash" id="L19-7G-ywZ">
@@ -224,11 +230,19 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IYh-7R-y32">
+                                            <rect key="frame" x="342" y="20" width="44" height="30"/>
+                                            <state key="normal" title="Follow">
+                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="E3Z-Fu-4ot" firstAttribute="top" secondItem="RrP-IX-qaV" secondAttribute="top" id="0u8-Wc-FKT"/>
                                         <constraint firstItem="RrP-IX-qaV" firstAttribute="centerY" secondItem="5Qm-WG-ZMN" secondAttribute="centerY" id="4FY-IP-38G"/>
+                                        <constraint firstItem="IYh-7R-y32" firstAttribute="top" secondItem="RrP-IX-qaV" secondAttribute="top" id="6M8-Vo-zZd"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="E3Z-Fu-4ot" secondAttribute="trailing" constant="8" id="6fh-nN-7lY"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="IYh-7R-y32" secondAttribute="trailing" constant="8" id="Ilh-Wa-yI7"/>
                                         <constraint firstItem="E3Z-Fu-4ot" firstAttribute="leading" secondItem="RrP-IX-qaV" secondAttribute="trailing" constant="8" id="L8C-A3-PiQ"/>
                                         <constraint firstItem="RrP-IX-qaV" firstAttribute="leading" secondItem="5Qm-WG-ZMN" secondAttribute="leading" constant="8" id="pX6-CX-BH2"/>
                                     </constraints>
