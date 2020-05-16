@@ -22,8 +22,11 @@ class MyGroupsTableViewController: UITableViewController {
             
             if let indexPath = allGroupsVC.tableView.indexPathForSelectedRow {
                 let newGroup = allGroupsVC.allGroups[indexPath.row]
-                self.myGroups.append(newGroup)
-                tableView.reloadData()
+                
+                if !myGroups.contains(newGroup) {
+                    self.myGroups.append(newGroup)
+                    tableView.reloadData()
+                }
             }
         }
     }

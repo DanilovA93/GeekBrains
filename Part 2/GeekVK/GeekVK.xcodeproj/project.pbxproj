@@ -76,9 +76,9 @@
 		8FE794AD24544E220066346C /* GeekVK */ = {
 			isa = PBXGroup;
 			children = (
-				8FE794D0246C79850066346C /* Groups */,
-				8FE794CD246C79500066346C /* Friends */,
 				8FE794C2246B3CA90066346C /* Model */,
+				8FE794CD246C79500066346C /* Friends */,
+				8FE794D0246C79850066346C /* Groups */,
 				8FE794AE24544E220066346C /* AppDelegate.swift */,
 				8FE794B024544E220066346C /* SceneDelegate.swift */,
 				8FE794B224544E220066346C /* ViewController.swift */,
