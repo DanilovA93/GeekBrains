@@ -149,6 +149,7 @@
                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
                                             <connections>
+                                                <action selector="followGroup:" destination="bmg-8h-YSO" eventType="touchUpInside" id="cLI-Az-u1M"/>
                                                 <action selector="unfollowGroup:" destination="wxm-2a-gKe" eventType="touchUpInside" id="irC-8j-x4z"/>
                                             </connections>
                                         </button>
@@ -175,19 +176,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="dHd-CL-ZB1">
-                        <leftBarButtonItems>
-                            <barButtonItem systemItem="search" id="k9v-0y-fXo">
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <segue destination="jcF-6r-LSD" kind="show" id="RZ5-Bz-f5G"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem systemItem="trash" id="L19-7G-ywZ">
-                                <connections>
-                                    <action selector="deleteGroup:" destination="wxm-2a-gKe" id="DSX-Tz-J0v"/>
-                                </connections>
-                            </barButtonItem>
-                        </leftBarButtonItems>
+                        <barButtonItem key="leftBarButtonItem" systemItem="search" id="k9v-0y-fXo">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <segue destination="jcF-6r-LSD" kind="show" id="RZ5-Bz-f5G"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Logout" id="8LA-vM-WZz">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -235,6 +229,10 @@
                                             <state key="normal" title="Follow">
                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
+                                            <connections>
+                                                <action selector="follow:" destination="C7B-Hz-y9v" eventType="touchUpInside" id="6dG-Zf-VCk"/>
+                                                <segue destination="C7B-Hz-y9v" kind="unwind" identifier="followGroup" unwindAction="followGroupWithSegue:" id="5ec-Tw-FrZ"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
@@ -261,6 +259,7 @@
                     <navigationItem key="navigationItem" id="vJF-kp-BMM"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="egj-YU-dGt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="C7B-Hz-y9v" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3677" y="451"/>
         </scene>

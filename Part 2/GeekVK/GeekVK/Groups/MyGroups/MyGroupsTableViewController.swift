@@ -8,12 +8,25 @@
 
 import UIKit
 
+
 class MyGroupsTableViewController: UITableViewController {
-    
+        
     var myGroups: [Group] = [
         Group(id: 1, name: "one", avatar: UIImage(named: "group1")!),
         Group(id: 2, name: "two", avatar: UIImage(named: "group2")!)
     ]
+    
+    @IBAction func followGroup(segue: UIStoryboardSegue) {
+        if segue.identifier == "followGroup" {
+            let allGroupsVC = segue.source as! AllGroupsTableViewController
+            
+            if let indexPath = allGroupsVC.tableView.indexPathForSelectedRow {
+                let newGroup = allGroupsVC.allGroups[indexPath.row]
+                self.myGroups.append(newGroup)
+                tableView.reloadData()
+            }
+        }
+    }
     
     @IBAction func unfollowGroup(_ sender: UIButton) {
         if let cell = sender.superview?.superview as? UITableViewCell {
@@ -23,17 +36,9 @@ class MyGroupsTableViewController: UITableViewController {
             tableView.reloadSections(IndexSet(integer: 0), with: .fade)
         }
     }
-
-    @IBAction func deleteGroup(_ sender: Any) {
-        if myGroups.count > 0 {
-            myGroups.remove(at: 0)
-            tableView.reloadSections(IndexSet(integer: 0), with: .fade)
-        }
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
 
     // MARK: - Table view data source

@@ -8,8 +8,9 @@
 
 import UIKit
 
+
 class AllGroupsTableViewController: UITableViewController {
-    
+            
     let allGroups: [Group] = [
         Group(id: 1, name: "one", avatar: UIImage(named: "group1")!),
         Group(id: 2, name: "two", avatar: UIImage(named: "group2")!),
@@ -29,7 +30,6 @@ class AllGroupsTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return allGroups.count
     }
-
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "allGroupsCell", for: indexPath) as! AllGroupsTableViewCell
