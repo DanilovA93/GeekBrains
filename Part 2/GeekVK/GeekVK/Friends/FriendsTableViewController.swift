@@ -14,7 +14,6 @@ class FriendsTableViewController: UITableViewController {
         User(id: 1, email: "user1", password: "123", name: "Tom", avatar: UIImage(named: "user1")!),
         User(id: 2, email: "user2", password: "321", name: "Jerry", avatar: UIImage(named: "user2")!)
     ]
-    var selectedFriend: User?
 
     override func viewDidLoad() {
         super.viewDidLoad()
