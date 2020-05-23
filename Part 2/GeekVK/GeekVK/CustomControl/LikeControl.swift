@@ -78,4 +78,5 @@ class LikeControl: UIControl {
         
         self.label.text = String(self.allLikes)
     }
+    
 }
