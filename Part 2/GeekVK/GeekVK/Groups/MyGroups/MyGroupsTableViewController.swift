@@ -19,7 +19,7 @@ class MyGroupsTableViewController: UITableViewController {
     @IBAction func followGroup(segue: UIStoryboardSegue) {
         if segue.identifier == "followGroup" {
             let allGroupsVC = segue.source as! AllGroupsTableViewController
-            
+                        
             if let indexPath = allGroupsVC.tableView.indexPathForSelectedRow {
                 let newGroup = allGroupsVC.allGroups[indexPath.row]
                 

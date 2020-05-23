@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -279,30 +279,45 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DLK-Fy-THZ">
-                                            <rect key="frame" x="8" y="20" width="60" height="60"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="60" id="1fV-Z0-BGe"/>
-                                                <constraint firstAttribute="height" constant="60" id="VjB-v6-Dlk"/>
-                                            </constraints>
-                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ro3-BV-Bqv">
-                                            <rect key="frame" x="76" y="20" width="310" height="21"/>
+                                            <rect key="frame" x="88" y="20" width="298" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q6Y-ON-Mi7" customClass="AvatarView" customModule="GeekVK" customModuleProvider="target">
+                                            <rect key="frame" x="20" y="20" width="60" height="60"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="60" id="9yv-Jt-0y5"/>
+                                                <constraint firstAttribute="height" constant="60" id="lZ7-Om-bFf"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowWidth">
+                                                    <real key="value" value="2"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowTransparency">
+                                                    <real key="value" value="1"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
                                     </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstItem="Ro3-BV-Bqv" firstAttribute="leading" secondItem="DLK-Fy-THZ" secondAttribute="trailing" constant="8" id="43v-yk-Xg3"/>
-                                        <constraint firstItem="Ro3-BV-Bqv" firstAttribute="top" secondItem="DLK-Fy-THZ" secondAttribute="top" id="Lqf-Dq-hQn"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="Ro3-BV-Bqv" secondAttribute="trailing" constant="8" id="OdK-VI-EFD"/>
-                                        <constraint firstItem="DLK-Fy-THZ" firstAttribute="centerY" secondItem="XaC-D1-VTL" secondAttribute="centerY" id="jPE-n8-Zag"/>
-                                        <constraint firstItem="DLK-Fy-THZ" firstAttribute="leading" secondItem="XaC-D1-VTL" secondAttribute="leading" constant="8" id="q4E-5w-GUP"/>
+                                        <constraint firstItem="Ro3-BV-Bqv" firstAttribute="top" secondItem="q6Y-ON-Mi7" secondAttribute="top" id="dHa-F8-x2e"/>
+                                        <constraint firstItem="q6Y-ON-Mi7" firstAttribute="centerY" secondItem="XaC-D1-VTL" secondAttribute="centerY" id="mQ2-K2-hZp"/>
+                                        <constraint firstItem="Ro3-BV-Bqv" firstAttribute="leading" secondItem="q6Y-ON-Mi7" secondAttribute="trailing" constant="8" id="r35-St-u0y"/>
+                                        <constraint firstItem="q6Y-ON-Mi7" firstAttribute="leading" secondItem="XaC-D1-VTL" secondAttribute="leadingMargin" id="yjx-2K-udE"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
-                                    <outlet property="avatarImageView" destination="DLK-Fy-THZ" id="SQG-S4-FdG"/>
+                                    <outlet property="avatar" destination="q6Y-ON-Mi7" id="pbD-7N-5zJ"/>
                                     <outlet property="nameLabel" destination="Ro3-BV-Bqv" id="zA4-R0-FnB"/>
                                     <segue destination="As7-2S-zaS" kind="show" id="SVu-Zz-OLs"/>
                                 </connections>
