@@ -9,8 +9,10 @@
 import UIKit
 
 
-class AllGroupsTableViewController: UITableViewController {
+class AllGroupsTableViewController: UITableViewController, UISearchBarDelegate {
             
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     let allGroups: [Group] = [
         Group(id: 1, name: "one", avatar: UIImage(named: "group1")!),
         Group(id: 2, name: "two", avatar: UIImage(named: "group2")!),
@@ -20,6 +22,9 @@ class AllGroupsTableViewController: UITableViewController {
         Group(id: 6, name: "six", avatar: UIImage(named: "group6")!)
     ]
     
+    var filteredAllGroups = [Group]()
+    var isSearching: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -28,16 +33,30 @@ class AllGroupsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return allGroups.count
+        return isSearching ? filteredAllGroups.count : allGroups.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "allGroupsCell", for: indexPath) as! AllGroupsTableViewCell
         
-        cell.avatarImageView.image = allGroups[indexPath.row].avatar
-        cell.nameLabel.text = allGroups[indexPath.row].name
+        let myGroupList = isSearching ? filteredAllGroups : allGroups
+        
+        cell.avatarImageView.image = myGroupList[indexPath.row].avatar
+        cell.nameLabel.text = myGroupList[indexPath.row].name
         // Configure the cell...
         
         return cell
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        self.isSearching = !searchText.isEmpty
+        self.filteredAllGroups =
+            allGroups.filter { (group) -> Bool in
+                group.name.lowercased().contains(searchText.lowercased())
+            }
+                                
+        DispatchQueue.main.async{
+            self.tableView.reloadData()
+        }
     }
 }

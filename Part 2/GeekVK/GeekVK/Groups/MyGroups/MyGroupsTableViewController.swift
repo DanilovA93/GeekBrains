@@ -9,12 +9,17 @@
 import UIKit
 
 
-class MyGroupsTableViewController: UITableViewController {
+class MyGroupsTableViewController: UITableViewController, UISearchBarDelegate {
         
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     var myGroups: [Group] = [
         Group(id: 1, name: "one", avatar: UIImage(named: "group1")!),
         Group(id: 2, name: "two", avatar: UIImage(named: "group2")!)
     ]
+    
+    var filteredMyGroups = [Group]()
+    var isSearching: Bool = false
     
     @IBAction func followGroup(segue: UIStoryboardSegue) {
         if segue.identifier == "followGroup" {
@@ -48,17 +53,31 @@ class MyGroupsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return myGroups.count
+        return isSearching ? filteredMyGroups.count : myGroups.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myGroupsCell", for: indexPath) as! MyGroupsTableViewCell
         
-        cell.avatarImageView.image = myGroups[indexPath.row].avatar
-        cell.nameLabel.text = myGroups[indexPath.row].name
+        let myGroupList = isSearching ? filteredMyGroups : myGroups
+        
+        cell.avatarImageView.image = myGroupList[indexPath.row].avatar
+        cell.nameLabel.text = myGroupList[indexPath.row].name
 
         // Configure the cell...
 
         return cell
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        self.isSearching = !searchText.isEmpty
+        self.filteredMyGroups =
+            myGroups.filter { (group) -> Bool in
+                group.name.lowercased().contains(searchText.lowercased())
+            }
+                                
+        DispatchQueue.main.async{
+            self.tableView.reloadData()
+        }
     }
 }

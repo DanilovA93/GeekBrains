@@ -73,8 +73,8 @@ class ViewController: UIViewController {
     
     private func usersDB() -> Array<User> {
         var arr: Array<User> = Array()
-        let user1: User = User(id: 1, email: "user1", password: "123", name: "Tom", avatar: UIImage(named: "user1")!)
-        let user2: User = User(id: 2, email: "user2", password: "321", name: "Jerry", avatar: UIImage(named: "user2")!)
+        let user1: User = User(id: 1, email: "1", password: "1", firstName: "Jessie", lastName: "Howard", avatar: UIImage(named: "mouse")!)
+        let user2: User = User(id: 2, email: "user2", password: "321", firstName: "Elisabeth", lastName: "Peters", avatar: UIImage(named: "mouse")!)
         
         arr.append(user1)
         arr.append(user2)

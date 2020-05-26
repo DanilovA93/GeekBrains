@@ -11,6 +11,7 @@ import UIKit
 @IBDesignable class AvatarView: UIView {
     
     var image: UIImage?
+    var name: String?
     var shadowWidthFloat: CGFloat?
     var shadowTransparencyFloat: Float?
     var color: UIColor?
