@@ -56,7 +56,6 @@ class FriendsTableViewController: UITableViewController, UISearchBarDelegate {
         if let friendValues = friendDictionary[friendKey] {
             print()
             cell.avatar.image = friendValues[indexPath.row].avatar
-            cell.avatar.name = "\(friendValues[indexPath.row].firstName) \(friendValues[indexPath.row].lastName)"
             cell.nameLabel.text = "\(friendValues[indexPath.row].firstName) \(friendValues[indexPath.row].lastName)"
         }
         
