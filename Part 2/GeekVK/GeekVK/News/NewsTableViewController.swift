@@ -13,11 +13,19 @@ class NewsTableViewController: UITableViewController, UICollectionViewDelegate, 
     let news: [News] = [
         News(id: 1, name: "First news",
              text: "This is my first news This is my first news This is my first news This is my first news This is my first news This is my first news This is my first news This is my first news",
-             numberOfViewsL: 4,
+             numberOfViews: 4,
              avatar: UIImage(named: "group1")!,
              photos: [UIImage(named: "cat")!]),
-        News(id: 1, name: "First news", text: "This is my first news", numberOfViewsL: 4, avatar: UIImage(named: "group1")!, photos: [UIImage(named: "cat")!]),
-        News(id: 1, name: "First news", text: "This is my first news", numberOfViewsL: 4, avatar: UIImage(named: "group1")!, photos: [UIImage(named: "cat")!])
+        News(id: 1, name: "Secont news",
+             text: "This is my first news",
+             numberOfViews: 42,
+             avatar: UIImage(named: "group6")!,
+             photos: [UIImage(named: "cat")!]),
+        News(id: 1, name: "Third news",
+             text: "This is my first news",
+             numberOfViews: 13,
+             avatar: UIImage(named: "group2")!,
+             photos: [UIImage(named: "cat")!])
     ]
 
     override func viewDidLoad() {
@@ -37,6 +45,8 @@ class NewsTableViewController: UITableViewController, UICollectionViewDelegate, 
         cell.avatar.image = news[indexPath.row].avatar
         cell.nameLabel.text = news[indexPath.row].name
         cell.newsTextLabel.text = news[indexPath.row].text
+        cell.viewsLabel.text = String(news[indexPath.row].numberOfViews)
+        cell.newsLike.allLikes = 30
 
         return cell
     }

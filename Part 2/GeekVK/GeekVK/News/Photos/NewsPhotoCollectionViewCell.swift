@@ -15,5 +15,4 @@ class NewsPhotoCollectionViewCell: UICollectionViewCell {
         
         self.image.image = image
     }
-    
 }

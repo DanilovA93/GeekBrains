@@ -24,11 +24,12 @@ class LikeControl: UIControl {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+        
         common()
     }
     
     func common() {
-        let controlWidth = 50
+        let controlWidth = 45
         let controlHeight = controlWidth / 2
                 
         button.frame = CGRect(x: 0, y: 0, width: controlHeight, height: controlHeight)
@@ -52,7 +53,7 @@ class LikeControl: UIControl {
     
     private func getActualColors() {
         let liked = UIColor.red
-        let notLiked = UIColor.white
+        let notLiked = UIColor.black
 
         let tintedImage = image?.withRenderingMode(.alwaysTemplate)
         button.setImage(tintedImage, for: .normal)
@@ -78,5 +79,4 @@ class LikeControl: UIControl {
         
         self.label.text = String(self.allLikes)
     }
-    
 }
