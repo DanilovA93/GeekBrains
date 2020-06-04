@@ -28,7 +28,7 @@ class ViewController: UIViewController {
     private func animateLoad() {
         let diametre = 10
         let positionX = 40
-        let positionY = 20
+        let positionY = 30
         
         let loadCircleView1 = UIView(frame: CGRect(x: positionX - 20, y: positionY, width: diametre, height: diametre))
         let loadCircleView2 = UIView(frame: CGRect(x: positionX, y: positionY, width: diametre, height: diametre))

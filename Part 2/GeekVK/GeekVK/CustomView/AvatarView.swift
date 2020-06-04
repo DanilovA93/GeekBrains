@@ -51,15 +51,19 @@ import UIKit
         self.addSubview(borderView)
     }
     
-    @objc func handleTap(sender: UITapGestureRecognizer) {        
-        UIView.animate(withDuration: 0.6,
+    @objc func handleTap(sender: UITapGestureRecognizer) {
+        
+        UIView.animate(withDuration: 0.3,
+        delay: 0,
+        usingSpringWithDamping: 0.8,
+        initialSpringVelocity: 0,
+        options: .curveEaseOut,
         animations: {
-            self.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
+            self.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
         },
         completion: { _ in
-            UIView.animate(withDuration: 0.6) {
-                self.transform = CGAffineTransform.identity
-            }
+                    UIView.animate(withDuration: 0.5) {
+                        self.transform = CGAffineTransform.identity}
         })
     }
 }
