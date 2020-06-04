@@ -14,7 +14,7 @@ struct User {
     var password: String
     var firstName: String
     var lastName: String
-    var avatar: UIImage
+    var avatar: String
     var groups: Array<Group> = Array()
     var friends: Array<User> = Array()
 }

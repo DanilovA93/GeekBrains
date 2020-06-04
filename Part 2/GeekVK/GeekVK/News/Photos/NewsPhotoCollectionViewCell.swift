@@ -12,7 +12,6 @@ class NewsPhotoCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var image: UIImageView!
     
     func updateImage(_ image: UIImage) {
-        
         self.image.image = image
     }
 }

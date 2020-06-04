@@ -14,14 +14,16 @@ class FriendsTableViewController: UITableViewController, UISearchBarDelegate {
     var friendDictionary = [String: [User]]()
     var friendSectionTitles = [String]()
     let friends: [User] = [
-        User(id: 1, email: "1", password: "1", firstName: "Jessie", lastName: "Howard", avatar: UIImage(named: "cat")!),
-        User(id: 2, email: "user2", password: "321", firstName: "Elisabeth", lastName: "Peters", avatar: UIImage(named: "mouse")!),
-        User(id: 3, email: "user3", password: "321", firstName: "David", lastName: "Preston", avatar: UIImage(named: "cat")!),
-        User(id: 4, email: "user4", password: "321", firstName: "Lindsey", lastName: "Day", avatar: UIImage(named: "mouse")!),
-        User(id: 5, email: "user5", password: "321", firstName: "Harry", lastName: "Quinn", avatar: UIImage(named: "cat")!),//
-        User(id: 6, email: "user6", password: "321", firstName: "Imogen", lastName: "Strickland", avatar: UIImage(named: "mouse")!),
-        User(id: 7, email: "user7", password: "321", firstName: "Ann", lastName: "Strick", avatar: UIImage(named: "cat")!),
-        User(id: 8, email: "user8", password: "321", firstName: "Felicity", lastName: "Lu", avatar: UIImage(named: "mouse")!)
+        User(id: 1, email: "1", password: "1", firstName: "Jessie", lastName: "Howard", avatar: "mouse"),
+        User(id: 2, email: "user2", password: "321", firstName: "Elisabeth", lastName: "Peters", avatar: "man1"),
+        User(id: 3, email: "user3", password: "321", firstName: "David", lastName: "Preston", avatar: "bob"),
+        User(id: 4, email: "user4", password: "321", firstName: "Lindsey", lastName: "Day", avatar: "cat"),
+        User(id: 5, email: "user5", password: "321", firstName: "Harry", lastName: "Quinn", avatar: "man2"),
+        User(id: 6, email: "user6", password: "321", firstName: "Imogen", lastName: "Strickland", avatar: "mouse"),
+        User(id: 7, email: "user7", password: "321", firstName: "Ann", lastName: "Strick", avatar: "cat"),
+        User(id: 8, email: "user8", password: "321", firstName: "Felicity", lastName: "Lu", avatar: "bob"),
+        User(id: 8, email: "user9", password: "321", firstName: "Jack", lastName: "Black", avatar: "man1"),
+        User(id: 8, email: "user10", password: "321", firstName: "Bruce", lastName: "Lee", avatar: "man2")
     ]
     
     var filteredFriends = [User]()
@@ -54,8 +56,7 @@ class FriendsTableViewController: UITableViewController, UISearchBarDelegate {
         
         let friendKey = friendSectionTitles[indexPath.section]
         if let friendValues = friendDictionary[friendKey] {
-            print()
-            cell.avatar.image = friendValues[indexPath.row].avatar
+            cell.avatar.image = UIImage(named: friendValues[indexPath.row].avatar)!
             cell.nameLabel.text = "\(friendValues[indexPath.row].firstName) \(friendValues[indexPath.row].lastName)"
         }
         

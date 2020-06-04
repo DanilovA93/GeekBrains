@@ -57,14 +57,19 @@ class LikeControl: UIControl {
 
         let tintedImage = image?.withRenderingMode(.alwaysTemplate)
         button.setImage(tintedImage, for: .normal)
-                        
-        if self.likeIt {
-            self.label.textColor = liked
-            self.button.tintColor = liked
-        } else {
-            self.label.textColor = notLiked
-            self.button.tintColor = notLiked
-        }
+        
+        UIView.transition(with: label,
+                          duration: 0.5,
+                          options: .transitionCrossDissolve,
+                          animations: {
+                    if self.likeIt {
+                self.label.textColor = liked
+                self.button.tintColor = liked
+            } else {
+                self.label.textColor = notLiked
+                self.button.tintColor = notLiked
+            }
+        })
     }
     
     private func changeLabelByClick() {

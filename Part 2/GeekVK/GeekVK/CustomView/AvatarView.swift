@@ -10,7 +10,7 @@ import UIKit
 
 @IBDesignable class AvatarView: UIView {
     
-    var image = UIImage()
+    var image: UIImage?
     var shadowWidthFloat: CGFloat?
     var shadowTransparencyFloat: Float?
     var color: UIColor?
@@ -30,6 +30,7 @@ import UIKit
     }
     
     override func draw(_ rect: CGRect) {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap(sender:)))
         let frame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height)
     
         let imageView = UIImageView(frame: frame)
@@ -45,7 +46,20 @@ import UIKit
         borderView.layer.shadowOpacity = (shadowTransparencyFloat != nil) ? shadowTransparency : 1
         borderView.layer.shadowOffset = CGSize.zero
         
+        self.addGestureRecognizer(tap)
         self.addSubview(imageView)
         self.addSubview(borderView)
+    }
+    
+    @objc func handleTap(sender: UITapGestureRecognizer) {        
+        UIView.animate(withDuration: 0.6,
+        animations: {
+            self.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
+        },
+        completion: { _ in
+            UIView.animate(withDuration: 0.6) {
+                self.transform = CGAffineTransform.identity
+            }
+        })
     }
 }

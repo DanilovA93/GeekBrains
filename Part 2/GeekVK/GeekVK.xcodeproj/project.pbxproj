@@ -87,6 +87,13 @@
 			path = Photos;
 			sourceTree = "<group>";
 		};
+		8F118FEA2482BEB900DDBF88 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Animation;
+			sourceTree = "<group>";
+		};
 		8FE794A224544E220066346C = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +113,7 @@
 		8FE794AD24544E220066346C /* GeekVK */ = {
 			isa = PBXGroup;
 			children = (
+				8F118FEA2482BEB900DDBF88 /* Animation */,
 				8FF8E3C12475C0E200AF407E /* CustomControl */,
 				8FF8E3BA247579A000AF407E /* CustomView */,
 				8FE794C2246B3CA90066346C /* Model */,

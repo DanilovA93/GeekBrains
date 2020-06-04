@@ -21,6 +21,43 @@ class ViewController: UIViewController {
                                                name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide),
                                                name: UIResponder.keyboardWillHideNotification, object: nil)
+    
+        animateLoad()
+    }
+    
+    private func animateLoad() {
+        let diametre = 10
+        let positionX = 40
+        let positionY = 20
+        
+        let loadCircleView1 = UIView(frame: CGRect(x: positionX - 20, y: positionY, width: diametre, height: diametre))
+        let loadCircleView2 = UIView(frame: CGRect(x: positionX, y: positionY, width: diametre, height: diametre))
+        let loadCircleView3 = UIView(frame: CGRect(x: positionX + 20, y: positionY, width: diametre, height: diametre))
+        
+        loadCircleView1.layer.cornerRadius = CGFloat(diametre / 2)
+        loadCircleView1.backgroundColor = .white
+        
+        loadCircleView2.layer.cornerRadius = CGFloat(diametre / 2)
+        loadCircleView2.backgroundColor = .white
+        
+        loadCircleView3.layer.cornerRadius = CGFloat(diametre / 2)
+        loadCircleView3.backgroundColor = .white
+
+        UIView.animate(withDuration: 1.5, delay: 0.5, options: [.repeat, .autoreverse], animations: {
+            loadCircleView1.alpha = 0.1
+        })
+        
+        UIView.animate(withDuration: 1.5, delay: 1, options: [.repeat, .autoreverse], animations: {
+            loadCircleView2.alpha = 0.1
+        })
+        
+        UIView.animate(withDuration: 1.5, delay: 1.5, options: [.repeat, .autoreverse], animations: {
+            loadCircleView3.alpha = 0.1
+        })
+        
+        self.view.addSubview(loadCircleView1)
+        self.view.addSubview(loadCircleView2)
+        self.view.addSubview(loadCircleView3)
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
@@ -73,12 +110,13 @@ class ViewController: UIViewController {
     
     private func usersDB() -> Array<User> {
         var arr: Array<User> = Array()
-        let user1: User = User(id: 1, email: "1", password: "1", firstName: "Jessie", lastName: "Howard", avatar: UIImage(named: "mouse")!)
-        let user2: User = User(id: 2, email: "user2", password: "321", firstName: "Elisabeth", lastName: "Peters", avatar: UIImage(named: "mouse")!)
+        let user1: User = User(id: 1, email: "", password: "", firstName: "Jessie", lastName: "Howard", avatar: "mouse")
+        let user2: User = User(id: 2, email: "user2", password: "321", firstName: "Elisabeth", lastName: "Peters", avatar: "mouse")
         
         arr.append(user1)
         arr.append(user2)
         
         return arr
     }
+    
 }
