@@ -20,7 +20,7 @@ class FriendsTableViewController: UITableViewController, UISearchBarDelegate {
         User(id: 4, email: "user4", password: "321", firstName: "Lindsey", lastName: "Day", avatar: [UIImage(named: "cat")!]),
         User(id: 5, email: "user5", password: "321", firstName: "Harry", lastName: "Quinn", avatar: [UIImage(named: "man2")!]),
         User(id: 6, email: "user6", password: "321", firstName: "Imogen", lastName: "Strickland", avatar: [UIImage(named: "mouse")!]),
-        User(id: 7, email: "user7", password: "321", firstName: "Ann", lastName: "Strick", avatar: [UIImage(named: "cat")!]),
+        User(id: 7, email: "user7", password: "321", firstName: "Ann", lastName: "Strick", avatar: [UIImage(named: "cat")!, UIImage(named: "bob")!]),
         User(id: 8, email: "user8", password: "321", firstName: "Felicity", lastName: "Lu", avatar: [UIImage(named: "bob")!]),
         User(id: 8, email: "user9", password: "321", firstName: "Jack", lastName: "Black", avatar: [UIImage(named: "man1")!, UIImage(named: "man2")!]),
         User(id: 8, email: "user10", password: "321", firstName: "Bruce", lastName: "Lee", avatar: [UIImage(named: "man2")!])
@@ -82,8 +82,8 @@ class FriendsTableViewController: UITableViewController, UISearchBarDelegate {
             if let friendValues = friendDictionary[friendKey] {
                 let i = tableView.indexPath(for: cell)!.row
                 
-                let targetVC = segue.destination as! FriendsPhotoCollectionViewController
-                targetVC.selectedFriend = friendValues[i]
+                let targetVC = segue.destination as! FriendsPhotoViewController
+                targetVC.user = friendValues[i]
             }
         }
     }
