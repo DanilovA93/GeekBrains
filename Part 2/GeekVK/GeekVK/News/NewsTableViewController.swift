@@ -14,19 +14,24 @@ class NewsTableViewController: UITableViewController, UICollectionViewDelegate, 
         News(id: 1, name: "First news",
              text: "This is my first news This is my first news This is my first news This is my first news This is my first news This is my first news This is my first news This is my first news",
              numberOfViews: 4,
+             numberOfLikes: 7,
              avatar: UIImage(named: "group1")!,
-             photos: [UIImage(named: "cat")!]),
+             photos: [UIImage(named: "man1")!]),
         News(id: 1, name: "Secont news",
              text: "This is my first news",
              numberOfViews: 42,
+             numberOfLikes: 23,
              avatar: UIImage(named: "group6")!,
-             photos: [UIImage(named: "cat")!]),
+             photos: [UIImage(named: "mouse")!]),
         News(id: 1, name: "Third news",
              text: "This is my first news",
              numberOfViews: 13,
+             numberOfLikes: 0,
              avatar: UIImage(named: "group2")!,
-             photos: [UIImage(named: "cat")!])
+             photos: [UIImage(named: "bob")!])
     ]
+    
+    private var tableCellNumber: Int?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +43,7 @@ class NewsTableViewController: UITableViewController, UICollectionViewDelegate, 
         // #warning Incomplete implementation, return the number of rows
         return news.count
     }
-    
+        
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "newsCell", for: indexPath) as! NewsTableViewCell
         
@@ -46,7 +51,11 @@ class NewsTableViewController: UITableViewController, UICollectionViewDelegate, 
         cell.nameLabel.text = news[indexPath.row].name
         cell.newsTextLabel.text = news[indexPath.row].text
         cell.viewsLabel.text = String(news[indexPath.row].numberOfViews)
-        cell.newsLike.allLikes = 30
+        cell.newsLike.allLikes = news[indexPath.row].numberOfLikes
+        
+        cell.newsLike.reloadInputViews()
+        
+        tableCellNumber = indexPath.row
 
         return cell
     }
@@ -57,7 +66,7 @@ class NewsTableViewController: UITableViewController, UICollectionViewDelegate, 
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "newsPhotoCell", for: indexPath) as! NewsPhotoCollectionViewCell
-        cell.image.image = news[indexPath.row].photos[0]
+        cell.image.image = news[self.tableCellNumber!].photos[0]
         
         return cell
     }

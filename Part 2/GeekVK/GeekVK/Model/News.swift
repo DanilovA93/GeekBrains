@@ -13,6 +13,7 @@ struct News {
     var name: String
     var text: String
     var numberOfViews: Int
+    var numberOfLikes: Int
     var avatar: UIImage
     var photos: [UIImage]
 }

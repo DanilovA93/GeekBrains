@@ -14,7 +14,7 @@ class LikeControl: UIControl {
     var button = UIButton()
     var label = UILabel()
     
-    var allLikes = 3
+    var allLikes = 0
     var likeIt = false
 
     override init(frame: CGRect) {
