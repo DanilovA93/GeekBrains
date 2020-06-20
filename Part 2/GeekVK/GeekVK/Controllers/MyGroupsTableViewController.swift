@@ -58,13 +58,10 @@ class MyGroupsTableViewController: UITableViewController, UISearchBarDelegate {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myGroupsCell", for: indexPath) as! MyGroupsTableViewCell
-        
         let myGroupList = isSearching ? filteredMyGroups : myGroups
         
         cell.avatarImageView.image = myGroupList[indexPath.row].avatar
         cell.nameLabel.text = myGroupList[indexPath.row].name
-
-        // Configure the cell...
 
         return cell
     }
