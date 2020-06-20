@@ -10,11 +10,13 @@ import UIKit
 
 @IBDesignable class AvatarView: UIView {
     
-    var image: UIImage?
+    fileprivate var imageView = UIImageView()
+    fileprivate var borderView = UIView()
+    
     var shadowWidthFloat: CGFloat?
     var shadowTransparencyFloat: Float?
-    var color: UIColor?
     
+    @IBInspectable var image: UIImage? { didSet { configureImage() }}
     @IBInspectable var shadowWidth: CGFloat {
         set { shadowWidthFloat = newValue }
         get { return shadowWidthFloat! }
@@ -29,16 +31,24 @@ import UIKit
         }
     }
     
-    override func draw(_ rect: CGRect) {
-        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap(sender:)))
-        let frame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height)
+    override func layoutSubviews() {
+        configureImage()
+        configureBorder()
+        
+        self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap(sender:))))
+    }
     
-        let imageView = UIImageView(frame: frame)
+    fileprivate func configureImage() {
+        imageView.frame = CGRect(x: 0.0, y: 0.0, width: self.bounds.width, height: self.bounds.height)
         imageView.image = self.image
         imageView.layer.cornerRadius = frame.height/2
-        imageView.clipsToBounds = true
+        imageView.layer.masksToBounds = true
         
-        let borderView = UIView(frame: frame)
+        self.addSubview(imageView)
+    }
+    
+    fileprivate func configureBorder() {
+        borderView.frame = CGRect(x: 0.0, y: 0.0, width: self.bounds.width, height: self.bounds.height)
         borderView.layer.borderWidth = 1
         borderView.layer.cornerRadius = frame.height/2
         borderView.layer.shadowRadius = shadowWidthFloat!
@@ -46,13 +56,10 @@ import UIKit
         borderView.layer.shadowOpacity = (shadowTransparencyFloat != nil) ? shadowTransparency : 1
         borderView.layer.shadowOffset = CGSize.zero
         
-        self.addGestureRecognizer(tap)
-        self.addSubview(imageView)
         self.addSubview(borderView)
     }
     
     @objc func handleTap(sender: UITapGestureRecognizer) {
-        
         UIView.animate(withDuration: 0.3,
         delay: 0,
         usingSpringWithDamping: 0.8,

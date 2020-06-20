@@ -71,35 +71,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8F118FDB247DA96E00DDBF88 /* News */ = {
-			isa = PBXGroup;
-			children = (
-				8F118FE5247EBE6D00DDBF88 /* Photos */,
-				8F118FDC247DA9DB00DDBF88 /* NewsTableViewCell.swift */,
-				8F118FDE247DAA0200DDBF88 /* NewsTableViewController.swift */,
-			);
-			path = News;
-			sourceTree = "<group>";
-		};
-		8F118FE5247EBE6D00DDBF88 /* Photos */ = {
-			isa = PBXGroup;
-			children = (
-				8F118FE6247EBF2100DDBF88 /* NewsPhotoCollectionViewCell.swift */,
-			);
-			path = Photos;
-			sourceTree = "<group>";
-		};
-		8F118FEA2482BEB900DDBF88 /* Animation */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Animation;
-			sourceTree = "<group>";
-		};
 		8FC1706B249BDCB600034A6C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8FE794D6246C7A790066346C /* AllGroupsTableViewController.swift */,
+				8FE794D1246C7A1C0066346C /* FriendsTableViewController.swift */,
 				8FC1706C249BDCE200034A6C /* FriendsPhotoViewController.swift */,
+				8FE794D3246C7A450066346C /* MyGroupsTableViewController.swift */,
+				8F118FDE247DAA0200DDBF88 /* NewsTableViewController.swift */,
+				8FE794B224544E220066346C /* ViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -133,17 +113,12 @@
 			isa = PBXGroup;
 			children = (
 				8FC1706E249C007100034A6C /* Animations */,
+				8FFDA62B249D1EAF0044BC8E /* Cells */,
 				8FC1706B249BDCB600034A6C /* Controllers */,
-				8F118FEA2482BEB900DDBF88 /* Animation */,
 				8FF8E3C12475C0E200AF407E /* CustomControl */,
 				8FF8E3BA247579A000AF407E /* CustomView */,
+				8FFDA62C249D25E70044BC8E /* Delegates */,
 				8FE794C2246B3CA90066346C /* Model */,
-				8FE794CD246C79500066346C /* Friends */,
-				8FE794D0246C79850066346C /* Groups */,
-				8F118FDB247DA96E00DDBF88 /* News */,
-				8FE794AE24544E220066346C /* AppDelegate.swift */,
-				8FE794B024544E220066346C /* SceneDelegate.swift */,
-				8FE794B224544E220066346C /* ViewController.swift */,
 				8FE794B424544E220066346C /* Main.storyboard */,
 				8FE794B724544E240066346C /* Assets.xcassets */,
 				8FE794B924544E240066346C /* LaunchScreen.storyboard */,
@@ -162,42 +137,6 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		8FE794CD246C79500066346C /* Friends */ = {
-			isa = PBXGroup;
-			children = (
-				8FE794C7246C763E0066346C /* FriendsTableViewCell.swift */,
-				8FE794D1246C7A1C0066346C /* FriendsTableViewController.swift */,
-			);
-			path = Friends;
-			sourceTree = "<group>";
-		};
-		8FE794CE246C796E0066346C /* MyGroups */ = {
-			isa = PBXGroup;
-			children = (
-				8FE794C9246C77150066346C /* MyGroupsTableViewCell.swift */,
-				8FE794D3246C7A450066346C /* MyGroupsTableViewController.swift */,
-			);
-			path = MyGroups;
-			sourceTree = "<group>";
-		};
-		8FE794CF246C797B0066346C /* AllGroups */ = {
-			isa = PBXGroup;
-			children = (
-				8FE794CB246C77470066346C /* AllGroupsTableViewCell.swift */,
-				8FE794D6246C7A790066346C /* AllGroupsTableViewController.swift */,
-			);
-			path = AllGroups;
-			sourceTree = "<group>";
-		};
-		8FE794D0246C79850066346C /* Groups */ = {
-			isa = PBXGroup;
-			children = (
-				8FE794CE246C796E0066346C /* MyGroups */,
-				8FE794CF246C797B0066346C /* AllGroups */,
-			);
-			path = Groups;
-			sourceTree = "<group>";
-		};
 		8FF8E3BA247579A000AF407E /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
@@ -212,6 +151,27 @@
 				8FF8E3C22475C12300AF407E /* LikeControl.swift */,
 			);
 			path = CustomControl;
+			sourceTree = "<group>";
+		};
+		8FFDA62B249D1EAF0044BC8E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				8FE794CB246C77470066346C /* AllGroupsTableViewCell.swift */,
+				8FE794C7246C763E0066346C /* FriendsTableViewCell.swift */,
+				8FE794C9246C77150066346C /* MyGroupsTableViewCell.swift */,
+				8F118FE6247EBF2100DDBF88 /* NewsPhotoCollectionViewCell.swift */,
+				8F118FDC247DA9DB00DDBF88 /* NewsTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		8FFDA62C249D25E70044BC8E /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				8FE794AE24544E220066346C /* AppDelegate.swift */,
+				8FE794B024544E220066346C /* SceneDelegate.swift */,
+			);
+			path = Delegates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

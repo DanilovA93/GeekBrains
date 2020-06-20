@@ -104,7 +104,6 @@ class ViewController: UIViewController {
                 currentUser = user
             }
         }
-        
         return currentUser
     }
     
@@ -118,5 +117,4 @@ class ViewController: UIViewController {
         
         return arr
     }
-    
 }
