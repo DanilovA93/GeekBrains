@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AnimationDismiss: NSObject, UIViewControllerAnimatedTransitioning {
+class DismissAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     
     let endFrame: CGRect
     

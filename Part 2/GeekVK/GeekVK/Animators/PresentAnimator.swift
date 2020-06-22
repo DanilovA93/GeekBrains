@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AnimationPresent: NSObject, UIViewControllerAnimatedTransitioning {
+class PresentAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     
     let startFrame: CGRect
     

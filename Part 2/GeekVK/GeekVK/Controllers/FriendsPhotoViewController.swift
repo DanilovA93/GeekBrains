@@ -76,11 +76,11 @@ class FriendsPhotoViewController: UIViewController, UIViewControllerTransitionin
     }
     
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        AnimationDismiss(self.startFrame)
+        DismissAnimator(self.startFrame)
     }
     
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        AnimationPresent(self.startFrame)
+        PresentAnimator(self.startFrame)
     }
     
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRequireFailureOf otherGestureRecognizer: UIGestureRecognizer) -> Bool {

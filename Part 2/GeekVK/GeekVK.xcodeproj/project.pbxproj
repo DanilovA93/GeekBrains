@@ -7,14 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F0CE9B824A12B2B009AAC7D /* AngleNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0CE9B724A12B2B009AAC7D /* AngleNavigationViewController.swift */; };
+		8F0CE9BC24A12CB7009AAC7D /* PopAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0CE9BB24A12CB7009AAC7D /* PopAnimator.swift */; };
+		8F0CE9BE24A12D0E009AAC7D /* PushAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0CE9BD24A12D0E009AAC7D /* PushAnimator.swift */; };
 		8F118FDD247DA9DB00DDBF88 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F118FDC247DA9DB00DDBF88 /* NewsTableViewCell.swift */; };
 		8F118FDF247DAA0200DDBF88 /* NewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F118FDE247DAA0200DDBF88 /* NewsTableViewController.swift */; };
 		8F118FE4247DAC7800DDBF88 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F118FE3247DAC7800DDBF88 /* News.swift */; };
 		8F118FE7247EBF2100DDBF88 /* NewsPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F118FE6247EBF2100DDBF88 /* NewsPhotoCollectionViewCell.swift */; };
 		8F37B68C249E87A700C56885 /* LoadProcessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F37B68B249E87A700C56885 /* LoadProcessView.swift */; };
 		8FC1706D249BDCE200034A6C /* FriendsPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC1706C249BDCE200034A6C /* FriendsPhotoViewController.swift */; };
-		8FC17070249C00B900034A6C /* AnimationDismiss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC1706F249C00B900034A6C /* AnimationDismiss.swift */; };
-		8FC17072249C00F300034A6C /* AnimationPresent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC17071249C00F300034A6C /* AnimationPresent.swift */; };
+		8FC17070249C00B900034A6C /* DismissAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC1706F249C00B900034A6C /* DismissAnimator.swift */; };
+		8FC17072249C00F300034A6C /* PresentAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC17071249C00F300034A6C /* PresentAnimator.swift */; };
 		8FE794AF24544E220066346C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE794AE24544E220066346C /* AppDelegate.swift */; };
 		8FE794B124544E220066346C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE794B024544E220066346C /* SceneDelegate.swift */; };
 		8FE794B324544E220066346C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE794B224544E220066346C /* ViewController.swift */; };
@@ -34,14 +37,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8F0CE9B724A12B2B009AAC7D /* AngleNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngleNavigationViewController.swift; sourceTree = "<group>"; };
+		8F0CE9BB24A12CB7009AAC7D /* PopAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopAnimator.swift; sourceTree = "<group>"; };
+		8F0CE9BD24A12D0E009AAC7D /* PushAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushAnimator.swift; sourceTree = "<group>"; };
 		8F118FDC247DA9DB00DDBF88 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		8F118FDE247DAA0200DDBF88 /* NewsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewController.swift; sourceTree = "<group>"; };
 		8F118FE3247DAC7800DDBF88 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		8F118FE6247EBF2100DDBF88 /* NewsPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		8F37B68B249E87A700C56885 /* LoadProcessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadProcessView.swift; sourceTree = "<group>"; };
 		8FC1706C249BDCE200034A6C /* FriendsPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsPhotoViewController.swift; sourceTree = "<group>"; };
-		8FC1706F249C00B900034A6C /* AnimationDismiss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationDismiss.swift; sourceTree = "<group>"; };
-		8FC17071249C00F300034A6C /* AnimationPresent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationPresent.swift; sourceTree = "<group>"; };
+		8FC1706F249C00B900034A6C /* DismissAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissAnimator.swift; sourceTree = "<group>"; };
+		8FC17071249C00F300034A6C /* PresentAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentAnimator.swift; sourceTree = "<group>"; };
 		8FE794AB24544E220066346C /* GeekVK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeekVK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FE794AE24544E220066346C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8FE794B024544E220066346C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +85,7 @@
 				8FE794D6246C7A790066346C /* AllGroupsTableViewController.swift */,
 				8FE794D1246C7A1C0066346C /* FriendsTableViewController.swift */,
 				8FC1706C249BDCE200034A6C /* FriendsPhotoViewController.swift */,
+				8F0CE9B724A12B2B009AAC7D /* AngleNavigationViewController.swift */,
 				8FE794D3246C7A450066346C /* MyGroupsTableViewController.swift */,
 				8F118FDE247DAA0200DDBF88 /* NewsTableViewController.swift */,
 				8FE794B224544E220066346C /* ViewController.swift */,
@@ -86,13 +93,15 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		8FC1706E249C007100034A6C /* Animations */ = {
+		8FC1706E249C007100034A6C /* Animators */ = {
 			isa = PBXGroup;
 			children = (
-				8FC1706F249C00B900034A6C /* AnimationDismiss.swift */,
-				8FC17071249C00F300034A6C /* AnimationPresent.swift */,
+				8FC1706F249C00B900034A6C /* DismissAnimator.swift */,
+				8FC17071249C00F300034A6C /* PresentAnimator.swift */,
+				8F0CE9BB24A12CB7009AAC7D /* PopAnimator.swift */,
+				8F0CE9BD24A12D0E009AAC7D /* PushAnimator.swift */,
 			);
-			path = Animations;
+			path = Animators;
 			sourceTree = "<group>";
 		};
 		8FE794A224544E220066346C = {
@@ -114,7 +123,7 @@
 		8FE794AD24544E220066346C /* GeekVK */ = {
 			isa = PBXGroup;
 			children = (
-				8FC1706E249C007100034A6C /* Animations */,
+				8FC1706E249C007100034A6C /* Animators */,
 				8FFDA62B249D1EAF0044BC8E /* Cells */,
 				8FC1706B249BDCB600034A6C /* Controllers */,
 				8FF8E3C12475C0E200AF407E /* CustomControl */,
@@ -122,8 +131,8 @@
 				8FFDA62C249D25E70044BC8E /* Delegates */,
 				8FE794C2246B3CA90066346C /* Model */,
 				8FE794B424544E220066346C /* Main.storyboard */,
-				8FE794B724544E240066346C /* Assets.xcassets */,
 				8FE794B924544E240066346C /* LaunchScreen.storyboard */,
+				8FE794B724544E240066346C /* Assets.xcassets */,
 				8FE794BC24544E240066346C /* Info.plist */,
 			);
 			path = GeekVK;
@@ -248,20 +257,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8FC17072249C00F300034A6C /* AnimationPresent.swift in Sources */,
+				8F0CE9BC24A12CB7009AAC7D /* PopAnimator.swift in Sources */,
+				8FC17072249C00F300034A6C /* PresentAnimator.swift in Sources */,
 				8FE794C4246B3D040066346C /* User.swift in Sources */,
 				8FE794B324544E220066346C /* ViewController.swift in Sources */,
 				8F118FDD247DA9DB00DDBF88 /* NewsTableViewCell.swift in Sources */,
 				8F118FDF247DAA0200DDBF88 /* NewsTableViewController.swift in Sources */,
 				8FF8E3C32475C12300AF407E /* LikeControl.swift in Sources */,
-				8FC17070249C00B900034A6C /* AnimationDismiss.swift in Sources */,
+				8FC17070249C00B900034A6C /* DismissAnimator.swift in Sources */,
 				8F118FE7247EBF2100DDBF88 /* NewsPhotoCollectionViewCell.swift in Sources */,
 				8FE794D2246C7A1C0066346C /* FriendsTableViewController.swift in Sources */,
 				8FE794AF24544E220066346C /* AppDelegate.swift in Sources */,
 				8F37B68C249E87A700C56885 /* LoadProcessView.swift in Sources */,
 				8FE794D7246C7A790066346C /* AllGroupsTableViewController.swift in Sources */,
+				8F0CE9B824A12B2B009AAC7D /* AngleNavigationViewController.swift in Sources */,
 				8FE794CC246C77470066346C /* AllGroupsTableViewCell.swift in Sources */,
 				8FE794C8246C763E0066346C /* FriendsTableViewCell.swift in Sources */,
+				8F0CE9BE24A12D0E009AAC7D /* PushAnimator.swift in Sources */,
 				8FE794C6246B3D2F0066346C /* Group.swift in Sources */,
 				8F118FE4247DAC7800DDBF88 /* News.swift in Sources */,
 				8FF8E3BE2475829000AF407E /* AvatarView.swift in Sources */,

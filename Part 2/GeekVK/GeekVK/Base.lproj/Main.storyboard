@@ -415,7 +415,7 @@
         <!--Friends-->
         <scene sceneID="Z9V-fk-suN">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="w07-qu-aU4" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="w07-qu-aU4" customClass="AngleNavigationViewController" customModule="GeekVK" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Friends" image="person" catalog="system" id="oBF-oi-mBS"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JiF-D6-aIU">
@@ -435,7 +435,7 @@
         <!--Communities-->
         <scene sceneID="YLf-oK-Y12">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ICg-jl-HXb" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ICg-jl-HXb" customClass="AngleNavigationViewController" customModule="GeekVK" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Communities" image="person.3" catalog="system" id="4fk-Pc-d4w"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Hdd-tV-1Gh">
@@ -462,10 +462,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="newsCell" id="9py-bh-eZx" customClass="NewsTableViewCell" customModule="GeekVK" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="482.33334350585938"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="482.66665649414062"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9py-bh-eZx" id="jbi-4B-5Zy">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="482.33334350585938"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="482.66665649414062"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uq0-RA-iAZ" customClass="AvatarView" customModule="GeekVK" customModuleProvider="target">
@@ -541,19 +541,19 @@
                                             </connections>
                                         </collectionView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uVP-rM-JEt">
-                                            <rect key="frame" x="344" y="442.33333333333331" width="42" height="21"/>
+                                            <rect key="frame" x="344" y="442.33333333333331" width="42" height="21.333333333333314"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mul-FS-SWM" customClass="LikeControl" customModule="GeekVK" customModuleProvider="target">
-                                            <rect key="frame" x="8" y="442.33333333333331" width="60" height="21"/>
+                                            <rect key="frame" x="8" y="442.33333333333331" width="60" height="21.333333333333314"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="60" id="oa9-fW-bIe"/>
                                             </constraints>
                                         </view>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eye" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="OVO-6z-qY6">
-                                            <rect key="frame" x="309.66666666666669" y="445" width="26.333333333333314" height="16.333333333333314"/>
+                                            <rect key="frame" x="309.66666666666669" y="445.33333333333331" width="26.333333333333314" height="16.333333333333314"/>
                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </imageView>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ttK-xN-nWV">
