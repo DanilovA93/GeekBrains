@@ -43,6 +43,8 @@ class FriendsPhotoViewController: UIViewController, UIViewControllerTransitionin
         gestRecognizer.delegate = self
         gestRecognizer.maximumNumberOfTouches = 2
         view.addGestureRecognizer(gestRecognizer)
+        
+        WebRequest.getPhotos()
     }
     
     override func viewDidAppear(_ animated: Bool) {

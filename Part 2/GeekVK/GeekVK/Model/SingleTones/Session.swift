@@ -11,8 +11,8 @@ import Foundation
 class Session {
     static let instance = Session()
         
-    let token: String = ""
-    let userId: Int = 0
+    var accessToken: String?
+    var userId: String?
     
     private init() {}
 }

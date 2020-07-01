@@ -27,6 +27,8 @@ class AllGroupsTableViewController: UITableViewController, UISearchBarDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        WebRequest.getGroupsIdsForSearch()
     }
 
     // MARK: - Table view data source

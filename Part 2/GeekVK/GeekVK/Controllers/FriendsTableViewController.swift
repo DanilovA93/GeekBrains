@@ -31,7 +31,9 @@ class FriendsTableViewController: UITableViewController, UISearchBarDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+        
+        WebRequest.getFriendsIds()
+        
         updateFriendSectionsTitle()
     }
 

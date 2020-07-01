@@ -47,6 +47,8 @@ class MyGroupsTableViewController: UITableViewController, UISearchBarDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        WebRequest.getGroupsIds()
     }
 
     // MARK: - Table view data source
