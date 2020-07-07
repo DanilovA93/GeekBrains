@@ -13,10 +13,7 @@ class MyGroupsTableViewController: UITableViewController, UISearchBarDelegate {
         
     @IBOutlet weak var searchBar: UISearchBar!
     
-    var myGroups: [Group] = [
-        Group(id: 1, name: "one", avatar: UIImage(named: "group1")!),
-        Group(id: 2, name: "two", avatar: UIImage(named: "group2")!)
-    ]
+    var myGroups = [Group]()
     
     var filteredMyGroups = [Group]()
     var isSearching: Bool = false
@@ -26,7 +23,7 @@ class MyGroupsTableViewController: UITableViewController, UISearchBarDelegate {
             let allGroupsVC = segue.source as! AllGroupsTableViewController
                         
             if let indexPath = allGroupsVC.tableView.indexPathForSelectedRow {
-                let newGroup = allGroupsVC.allGroups[indexPath.row]
+                let newGroup = allGroupsVC.groups[indexPath.row]
                 
                 if !myGroups.contains(newGroup) {
                     self.myGroups.append(newGroup)
@@ -48,7 +45,11 @@ class MyGroupsTableViewController: UITableViewController, UISearchBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        WebRequest.getGroupsIds()
+        WebRequest.getGroups {
+            self.myGroups = $0
+            
+            self.tableView.reloadData()
+        }
     }
 
     // MARK: - Table view data source

@@ -99,12 +99,13 @@
 			path = SingleTones;
 			sourceTree = "<group>";
 		};
-		8FA6DD3024AA559B00174B27 /* WebView */ = {
+		8FA6DD3024AA559B00174B27 /* Web */ = {
 			isa = PBXGroup;
 			children = (
+				8FA6DD3324AA57B800174B27 /* WebRequest.swift */,
 				8FA6DD3924AA623800174B27 /* LoginViewController.swift */,
 			);
-			path = WebView;
+			path = Web;
 			sourceTree = "<group>";
 		};
 		8FC1706B249BDCB600034A6C /* Controllers */ = {
@@ -159,12 +160,11 @@
 				8FF8E3BA247579A000AF407E /* CustomView */,
 				8FFDA62C249D25E70044BC8E /* Delegates */,
 				8FE794C2246B3CA90066346C /* Model */,
-				8FA6DD3024AA559B00174B27 /* WebView */,
+				8FA6DD3024AA559B00174B27 /* Web */,
 				8FE794B424544E220066346C /* Main.storyboard */,
 				8FE794B924544E240066346C /* LaunchScreen.storyboard */,
 				8FE794B724544E240066346C /* Assets.xcassets */,
 				8FE794BC24544E240066346C /* Info.plist */,
-				8FA6DD3324AA57B800174B27 /* WebRequest.swift */,
 			);
 			path = GeekVK;
 			sourceTree = "<group>";
