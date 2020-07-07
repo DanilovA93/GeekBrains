@@ -10,37 +10,32 @@ import UIKit
 
 class LikeControl: UIControl {
     let image = UIImage(named: "liked")
+    let button = UIButton()
+    let label = UILabel()
     
-    var button = UIButton()
-    var label = UILabel()
-    
-    var allLikes = 3
+    let controlHeight = 22.5
+    var allLikes: Int? { didSet { configureText() } }
     var likeIt = false
 
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        common()
+    override func layoutSubviews() {
+        configureText()
+        configureButton()
+        
+        getActualColors()
     }
     
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        common()
+    fileprivate func configureText() {
+        label.frame = CGRect(x: controlHeight + 10, y: 0, width: controlHeight, height: controlHeight)
+        label.text = String(self.allLikes!)
+        
+        self.addSubview(label)
     }
     
-    func common() {
-        let controlWidth = 50
-        let controlHeight = controlWidth / 2
-                
+    fileprivate func configureButton() {
         button.frame = CGRect(x: 0, y: 0, width: controlHeight, height: controlHeight)
         button.isEnabled = false
         
-        label.frame = CGRect(x: controlHeight + 10, y: 0, width: controlHeight, height: controlHeight)
-        label.text = String(self.allLikes)
-        
-        getActualColors()
-
         self.addSubview(button)
-        self.addSubview(label)
     }
     
     override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
@@ -51,31 +46,34 @@ class LikeControl: UIControl {
     }
     
     private func getActualColors() {
-        let liked = UIColor.red
-        let notLiked = UIColor.white
+        let likeColor = UIColor.red
+        let notLikeColor = UIColor.black
 
         let tintedImage = image?.withRenderingMode(.alwaysTemplate)
         button.setImage(tintedImage, for: .normal)
-                        
-        if self.likeIt {
-            self.label.textColor = liked
-            self.button.tintColor = liked
-        } else {
-            self.label.textColor = notLiked
-            self.button.tintColor = notLiked
-        }
+        
+        UIView.transition(with: label,
+                          duration: 0.5,
+                          options: .transitionCrossDissolve,
+                          animations: {
+                    if self.likeIt {
+                self.label.textColor = likeColor
+                self.button.tintColor = likeColor
+            } else {
+                self.label.textColor = notLikeColor
+                self.button.tintColor = notLikeColor
+            }
+        })
     }
     
     private func changeLabelByClick() {
-        if self.likeIt {
-            self.allLikes -= 1
-            self.likeIt = false
-            
+        if likeIt {
+            allLikes! -= 1
+            likeIt = false
         } else {
-            self.allLikes += 1
-            self.likeIt = true
+            allLikes! += 1
+            likeIt = true
         }
-        
-        self.label.text = String(self.allLikes)
+        label.text = String(self.allLikes!)
     }
 }
